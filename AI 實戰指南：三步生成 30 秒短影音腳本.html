@@ -10,22 +10,97 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   
-<style>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
         margin: 0;
         background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
         min-height: 100vh;
+        padding: 0;
     }
     
-    /* 手機版 */
+    /* 滿版設計 - 移除 max-width 限制 */
+    #guide-article1 {
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+    }
+    
+    #guide-article1 > div {
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      width: 100% !important;
+    }
+    
+    /* 讓內容居中但有適當寬度 */
+    #guide-article1 > div > header > div,
+    #guide-article1 > div > article > div {
+      max-width: 880px;
+      margin: 0 auto;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    
+    /* 手機版減少 padding */
+    @media (max-width: 767px) {
+      #guide-article1 > div > header > div,
+      #guide-article1 > div > article > div {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+    
+    #guide-article1 > div > header,
+    #guide-article1 > div > article,
+    #guide-article1 > div > footer {
+      padding: 0 !important;
+    }
+    
+    /* 手機版 - 按鈕並排 */
     @media (max-width: 767px) {
         body {
             background: #ffffff;
+        }
+        
+        /* 確保按鈕容器並排 */
+        div[style*="display: flex"][style*="gap: 10px"] {
+          flex-direction: row !important;
+          gap: 8px !important;
+        }
+        
+        /* 按鈕寬度各佔一半 */
+        div[style*="display: flex"][style*="gap: 10px"] > * {
+          flex: 1 !important;
+          width: auto !important;
+          margin: 0 !important;
+        }
+        
+        /* 字體稍微縮小以適應 */
+        div[style*="display: flex"][style*="gap: 10px"] button,
+        div[style*="display: flex"][style*="gap: 10px"] a {
+          font-size: 13px !important;
+          padding: 0 12px !important;
         }
     }
     
     .page {
         min-height: 100vh;
+        width: 100%;
+    }
+    
+    /* 確保所有文字置中 */
+    button, a[style*="display: inline-flex"] {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
     }
 </style>
 
@@ -33,9 +108,10 @@
 <body>
 <!-- 文章：三步生成 30 秒短影音腳本 -->
           <div id="guide-article1" class="page">
-            <div style="max-width: 880px; margin: 0 auto; padding: 0 20px;">
+            <div>
               <!-- Header -->
               <header style="padding: 56px 0 18px; border-bottom: 1px solid #e2e8f0; background: linear-gradient(135deg, rgba(37,99,235,.10), transparent 60%), linear-gradient(135deg, rgba(59,130,246,.10), transparent 60%);">
+                <div>
                 <div style="font-size: 12px; color: #64748b; margin-bottom: 10px;">
                   <a onclick="switchPage('homepage'); return false;" style="text-decoration: none; color: #64748b; cursor: pointer;">首頁</a> / 
                   <a onclick="switchPage('guide'); return false;" style="text-decoration: none; color: #64748b; cursor: pointer;">AI 短影音實戰指南</a> / 文章
@@ -48,7 +124,7 @@
                   <span>閱讀約 6 分鐘</span>
                   <span>適用角色：創作者 / 行銷人 / 老闆</span>
                 </div>
-                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px;">
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; margin-bottom: 32px;">
                   <button onclick="switchPage('homepage');" style="display: inline-flex; align-items: center; justify-content: center; height: 46px; padding: 0 18px; border-radius: 999px; font-weight: 700; background: #2563eb; color: white; border: none; cursor: pointer;">
                     登入解鎖 AI 生成
                   </button>
@@ -56,10 +132,12 @@
                     加入 Discord 討論
                   </a>
                 </div>
+                </div>
               </header>
 
               <!-- Article -->
               <article style="padding: 28px 0;">
+                <div>
                 <!-- 快速導覽 -->
                 <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 14px; margin-bottom: 28px;">
                   <strong style="display: block; margin-bottom: 8px; color: #0f172a;">快速導覽</strong>
@@ -85,8 +163,14 @@
                   <li><strong>口播文字</strong>：一句話一重點，避免冗長。</li>
                   <li><strong>鏡頭指示</strong>：特寫／中景／轉場，搭配動作與表情。</li>
                 </ul>
-                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 16px; margin: 14px 0;">
-                  <pre style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #0f172a; color: white; border-radius: 8px; padding: 10px 12px; display: block; overflow: auto; margin: 0;"># 生成示例（摘要）
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 16px; margin: 14px 0; position: relative;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 14px; font-weight: 600; color: #64748b;">代碼示例</span>
+                    <button onclick="copyCode()" style="background: #3b82f6; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; transition: all 0.2s;">
+                      <i class="fas fa-copy"></i> 複製
+                    </button>
+                  </div>
+                  <pre id="codeBlock" style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #0f172a; color: white; border-radius: 8px; padding: 10px 12px; display: block; overflow: auto; margin: 0;"># 生成示例（摘要）
 Hook：上班族午休 30 分鐘，三步做出高蛋白便當？
 口播：步驟一… 步驟二… 步驟三…
 分鏡：0-5s 開場特寫；5-20s 步驟畫面；20-30s 成品＋CTA</pre>
@@ -111,6 +195,7 @@ Hook：上班族午休 30 分鐘，三步做出高蛋白便當？
                     到 Discord 看大家怎麼改腳本
                   </a>
                 </div>
+                </div>
               </article>
 
               <!-- Footer -->
@@ -125,6 +210,7 @@ Hook：上班族午休 30 分鐘，三步做出高蛋白便當？
       console.log('導航到：' + page);
     }
     
+    // 複製代碼功能
     function copyCode() {
       const codeBlock = document.getElementById('codeBlock');
       if (!codeBlock) return;
@@ -132,12 +218,56 @@ Hook：上班族午休 30 分鐘，三步做出高蛋白便當？
       
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(code).then(() => {
-          alert('已複製！');
+          showCopySuccess();
+        }).catch(() => {
+          fallbackCopy(code);
         });
       } else {
-        alert('複製功能不支援');
+        fallbackCopy(code);
       }
     }
+    
+    // 後備複製方法
+    function fallbackCopy(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      showCopySuccess();
+    }
+    
+    // 顯示複製成功提示
+    function showCopySuccess() {
+      const btn = event.target.closest('button');
+      if (btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> 已複製';
+        btn.style.background = '#10b981';
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '#3b82f6';
+        }, 2000);
+      }
+    }
+    
+    // 雙擊代碼區塊全選
+    document.addEventListener('DOMContentLoaded', function() {
+      const codeBlock = document.getElementById('codeBlock');
+      if (codeBlock) {
+        codeBlock.addEventListener('dblclick', function() {
+          const range = document.createRange();
+          range.selectNodeContents(this);
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+        });
+      }
+    });
   </script>
 </body>
 </html>
