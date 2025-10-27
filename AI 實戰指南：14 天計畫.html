@@ -3,120 +3,333 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>AI 帳號定位：內容支柱與 14 天計畫｜實戰指南｜ReelMind</title>
-<meta name="description" content="用 AI 建立內容支柱（教育／娛樂／啟發／成交），搭配 14 天上片節奏與任務清單，逐步形成穩定輸出。Warm Studio 奶白＋杏金視覺。" />
+<title>AI 帳號定位：內容支柱與 14 天計畫（進階版）｜ReelMind</title>
+<meta name="description" content="進階版指南：建立 ICP 與訊息金字塔、內容支柱與矩陣、Hook/CTA 範本、拍攝腳本模板、14 天上片日曆、KPI 標竿（台灣）、A/B 實驗與 SEO/GEO 在地化規範。Warm Studio 奶白＋杏金風格。" />
 <meta name="theme-color" content="#eab308" />
 <style>
 :root{
   --paper:#fffaf3; --ink:#1c1917; --sub:#6b7280; --line:#e7e5e4;
-  --gold:#eab308; --amber:#f59e0b; --leaf:#16a34a;
+  --gold:#eab308; --gold-d:#d4a406; --amber:#f59e0b; --leaf:#16a34a; --rose:#dc2626;
 }
 *{box-sizing:border-box} html,body{margin:0;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
 body{font-family:ui-sans-serif,system-ui,"Noto Sans TC","PingFang TC",Arial}
-.safe{max-width:920px;margin:0 auto;padding:0 16px}
-header{padding:64px 0 20px;border-bottom:1px solid var(--line);
+a{color:#92400e;text-decoration:none}
+.safe{max-width:980px;margin:0 auto;padding:0 16px}
+header{padding:64px 0 18px;border-bottom:1px solid var(--line);
   background:
-    radial-gradient(800px 260px at 85% 0%, rgba(234,179,8,.25), transparent 60%),
-    radial-gradient(480px 200px at 10% 0%, rgba(245,158,11,.18), transparent 60%)}
+    radial-gradient(820px 280px at 85% -10%, rgba(234,179,8,.26), transparent 60%),
+    radial-gradient(520px 220px at 10% -10%, rgba(245,158,11,.18), transparent 60%)}
+.badge{display:inline-block;padding:6px 10px;border:1px solid #f4e5b3;border-radius:999px;background:#fffbeb;font-weight:800;color:#92400e}
 .h1{font-size:38px;line-height:1.2;margin:8px 0 6px}
 .lead{color:var(--sub);margin:0}
-.badge{display:inline-block;padding:6px 10px;border:1px solid #f4e5b3;border-radius:999px;background:#fffbeb;font-weight:800;color:#92400e}
 .toc{margin:16px 0;background:#fffbeb;border:1px solid #f4e5b3;border-radius:16px;padding:14px}
-.toc a{text-decoration:none;color:#92400e}
-h2{font-size:26px;margin:26px 0 8px} p{color:var(--sub);line-height:1.9;margin:10px 0}
+h2{font-size:26px;margin:28px 0 10px}
+h3{font-size:18px;margin:18px 0 6px}
+p{color:var(--sub);line-height:1.9;margin:10px 0}
+.small{font-size:12px;color:#78716c}
 .block{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 12px 28px rgba(120,53,15,.06);margin:14px 0}
-.grid2{display:grid;gap:14px} @media(min-width:860px){.grid2{grid-template-columns:1.1fr 1fr}}
-.k{font-weight:900}
+.grid2{display:grid;gap:14px} @media(min-width:900px){.grid2{grid-template-columns:1fr 1fr}}
+.grid3{display:grid;gap:14px} @media(min-width:900px){.grid3{grid-template-columns:repeat(3,1fr)}}
 .list{padding-left:20px} .list li{margin:6px 0;color:var(--sub)}
 .note{border-left:6px solid var(--gold);background:#fff; padding:10px 14px;border-radius:10px;color:#7c2d12}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#171717;color:#fafafa;border-radius:12px;padding:12px;overflow:auto}
+.table{width:100%;border-collapse:separate;border-spacing:0 8px}
+.table .row{background:#fff;border:1px solid var(--line);border-radius:12px}
+.table .cell{padding:10px 12px}
+.k{font-weight:900}
 .cta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
 .btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 18px;border-radius:999px;font-weight:900}
-.btn.gold{background:var(--gold);color:#1c1917}.btn.gold:hover{background:#d4a406}
+.btn.gold{background:var(--gold);color:#1c1917}.btn.gold:hover{background:var(--gold-d)}
 .btn.ghost{border:1px solid var(--line);background:#fff}
+hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:22px 0}
 footer{padding:26px 0;color:#78716c;text-align:center;border-top:1px solid var(--line)}
+.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#fffbeb;border:1px solid #f4e5b3;color:#92400e;font-size:12px;font-weight:800;margin-right:6px}
 </style>
 </head>
 <body>
 <header>
   <div class="safe">
-    <span class="badge">實戰指南 · 內容支柱 × 14 天節奏</span>
-    <h1 class="h1">AI 帳號定位：內容支柱與 14 天計畫</h1>
-    <p class="lead">把內容拆成「教育／娛樂／啟發／成交」四支柱；跟著 14 天任務一路做完，形成可持續的上片節奏。</p>
+    <span class="badge">進階實戰 · 內容支柱 × 14 天節奏 × 指標與實驗</span>
+    <h1 class="h1">AI 帳號定位：內容支柱與 14 天計畫（進階版）</h1>
+    <p class="lead">建立 ICP 與訊息金字塔 → 內容支柱與矩陣 → Hook / CTA 庫 → 拍攝模板 → 14 天上片日曆 → KPI 標竿與 A/B 實驗 → SEO/GEO 在地化。</p>
     <div class="toc">
       <b>快速導覽</b>
-      <ol>
-        <li><a href="#pillar">建立內容支柱</a></li>
-        <li><a href="#calendar">14 天日程表</a></li>
-        <li><a href="#tasks">每日任務與檢核</a></li>
-      </ol>
-    </div>
-  </div>
-</header>
-
-<main class="safe">
-  <section id="pillar">
-    <h2>一、建立內容支柱（Pillars）</h2>
-    <div class="grid2">
-      <div class="block">
-        <div class="k">1) 教育（Education）</div>
-        <ul class="list"><li>拆概念、給步驟、做比較</li><li>口播：溫和、指引感</li></ul>
-      </div>
-      <div class="block">
-        <div class="k">2) 娛樂（Entertainment）</div>
-        <ul class="list"><li>反差、梗圖、挑戰</li><li>口播：節奏快、表情多</li></ul>
-      </div>
-      <div class="block">
-        <div class="k">3) 啟發（Inspiration）</div>
-        <ul class="list"><li>經驗談、失敗教訓</li><li>口播：故事＋轉折</li></ul>
-      </div>
-      <div class="block">
-        <div class="k">4) 成交（Conversion）</div>
-        <ul class="list"><li>案例→成果→CTA</li><li>口播：具體行動</li></ul>
-      </div>
-    </div>
-    <div class="note" style="margin-top:10px">小訣竅：每支柱先列 10 個題目；用一鍵生成把腳本產出，存到「創作者資料庫」版本管理。</div>
-  </section>
-
-  <section id="calendar">
-    <h2>二、14 天日程表（Demo）</h2>
-    <div class="block">
       <ol class="list">
-        <li>Day 1–2：受眾＆支柱確認</li>
-        <li>Day 3–4：產出 4 支腳本（支柱各 1）</li>
-        <li>Day 5–6：錄影＋剪輯（固定模板）</li>
-        <li>Day 7：上片與數據記錄</li>
-        <li>Day 8–10：第二輪 4 支</li>
-        <li>Day 11–12：優化 Hook / CTA</li>
-        <li>Day 13–14：上片、匯總、下輪題目</li>
+        <li><a href="#icp">ICP 與訊息金字塔</a></li>
+        <li><a href="#pillars">內容支柱與矩陣</a></li>
+        <li><a href="#hooks">Hook / CTA 庫（可直接套用）</a></li>
+        <li><a href="#script">拍攝腳本模板（SOV / B-Roll / 分鏡）</a></li>
+        <li><a href="#calendar">14 天日曆與每日任務</a></li>
+        <li><a href="#kpi">KPI 標竿（台灣）與 A/B 實驗清單</a></li>
+        <li><a href="#seo">SEO / GEO 在地化規範（繁中）</a></li>
+        <li><a href="#prompts">可複製的 AI 提示詞</a></li>
       </ol>
-    </div>
-  </section>
-
-  <section id="tasks">
-    <h2>三、每日任務與檢核</h2>
-    <div class="grid2">
-      <div class="block">
-        <div class="k">每日固定</div>
-        <ul class="list">
-          <li>10 分鐘選題、10 分鐘腳本微調</li>
-          <li>上片前確認：標題、封面、Hashtag</li>
-          <li>上片後記錄：播放、完播、互動</li>
-        </ul>
-      </div>
-      <div class="block">
-        <div class="k">每週回顧</div>
-        <ul class="list">
-          <li>最佳 Hook 類型（數據/反差/提問）</li>
-          <li>留言誘發詞哪個最有效？</li>
-          <li>下一輪的支柱比例怎麼調？</li>
-        </ul>
-      </div>
     </div>
     <div class="cta">
       <a class="btn gold" href="/login">登入解鎖 AI 生成</a>
       <a class="btn ghost" href="/forum">到 Discord 看實作案例</a>
     </div>
+  </div>
+</header>
+
+<main class="safe">
+
+  <!-- 1 ICP -->
+  <section id="icp">
+    <h2>一、ICP 與訊息金字塔</h2>
+    <div class="grid2">
+      <div class="block">
+        <h3>1) ICP（Ideal Customer Profile）範本</h3>
+        <ul class="list">
+          <li><b>族群</b>：年齡 / 地區（台灣北部/中部/南部）/ 身分（上班族、自由工作者）</li>
+          <li><b>情境</b>：通勤、午休、下班後剪片、週末批量拍攝</li>
+          <li><b>痛點</b>：無法穩定上片、腳本卡關、平台轉換率低</li>
+          <li><b>期望</b>：每週 3 支、30 秒腳本、能導流到 IG/Line 官方帳號</li>
+          <li><b>阻礙</b>：沒時間、拍攝環境差、怕鏡頭</li>
+        </ul>
+        <div class="note">結論：每支內容都要回應 ICP 的「情境＋痛點＋成果」。</div>
+      </div>
+      <div class="block">
+        <h3>2) 訊息金字塔（Messaging Pyramid）</h3>
+        <ul class="list">
+          <li><b>最上層（品牌主張）</b>：用 AI 把短影音變成一個可複製的系統。</li>
+          <li><b>中層（價值證明）</b>：一鍵生成腳本、IP 人設、資料庫與 A/B 測試。</li>
+          <li><b>底層（功能說明）</b>：Hook/CTA 模板、14 天節奏、台灣在地化語氣。</li>
+        </ul>
+        <p class="small">寫文案時，先上層→中層→底層；口播句保持 10–15 字。</p>
+      </div>
+    </div>
   </section>
+
+  <!-- 2 Pillars -->
+  <section id="pillars">
+    <h2>二、內容支柱與矩陣</h2>
+    <div class="grid2">
+      <div class="block">
+        <h3>支柱（Pillars）× 目標（Goals）</h3>
+        <table class="table">
+          <tr class="row">
+            <td class="cell k">教育</td>
+            <td class="cell">教方法 / 拆步驟（建立專業感）</td>
+          </tr>
+          <tr class="row">
+            <td class="cell k">娛樂</td>
+            <td class="cell">反差 / 梗化 / 快節奏（擴觸及）</td>
+          </tr>
+          <tr class="row">
+            <td class="cell k">啟發</td>
+            <td class="cell">故事 / 心法 / 轉折（建立情感連結）</td>
+          </tr>
+          <tr class="row">
+            <td class="cell k">成交</td>
+            <td class="cell">案例 / 規劃 / CTA（導流與轉換）</td>
+          </tr>
+        </table>
+        <div class="note">配比建議（初期）：教育 40% / 娛樂 30% / 啟發 20% / 成交 10%。</div>
+      </div>
+      <div class="block">
+        <h3>內容矩陣（Matrix）</h3>
+        <ul class="list">
+          <li><b>橫軸</b>：支柱（教育／娛樂／啟發／成交）</li>
+          <li><b>縱軸</b>：形式（口播 / 開箱 / 錄幕 / 範例重演 / 清單）</li>
+          <li><b>填格</b>：每格先寫 3 題 → 用「一鍵生成」產出腳本</li>
+        </ul>
+        <p class="small">完成一個 4×5 矩陣＝20 題，足夠應付兩週上片。</p>
+      </div>
+    </div>
+    <div class="block">
+      <h3>題目生成器（快速 10 題）</h3>
+      <p>公式：<b>族群</b>＋<b>場景</b>＋<b>痛點</b>＋<b>小成果</b></p>
+      <div class="code">上班族／午休／剪片太慢／10 分鐘完成封面  
+新手創作者／租屋房間／光線差／用 1 支檯燈錄出清晰人像 …</div>
+    </div>
+  </section>
+
+  <!-- 3 Hooks & CTA -->
+  <section id="hooks">
+    <h2>三、Hook / CTA 庫（可直接套用）</h2>
+    <div class="grid2">
+      <div class="block">
+        <h3>20 種 Hook 模板</h3>
+        <ul class="list">
+          <li>反差：其實我一開始是失敗的…</li>
+          <li>數據：用 30 秒學會 X，至少快 5 倍</li>
+          <li>清單：這 3 件事讓我上片率翻倍</li>
+          <li>錯誤：你可能一直做錯了</li>
+          <li>提問：3 秒內告訴我，你會選哪個？</li>
+          <li>挑戰：我用 7 天證明一件事</li>
+          <li>祕技：99% 人忽略的設定</li>
+          <li>拆解：把 X 拆成 3 步</li>
+          <li>對比：沒有 AI v.s. 有 AI</li>
+          <li>故事：我在北車地下街學到的…</li>
+          <li>工具：我只用這 2 個工具</li>
+          <li>成本：0 元也能做到</li>
+          <li>時間：10 分鐘版</li>
+          <li>懶人包：這個模板直接抄</li>
+          <li>案例：我用這招讓觀看變 3 倍</li>
+          <li>迷思：先把這個觀念丟掉</li>
+          <li>步驟：按這順序做就對了</li>
+          <li>QA：大家一直問我…</li>
+          <li>比較：X 與 Y 差在哪</li>
+          <li>地點：在捷運上也能拍！</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>CTA 範本（以「繁中、台灣」語氣）</h3>
+        <ul class="list">
+          <li>留言關鍵字：在留言打「<b>腳本</b>」，我把清單傳給你。</li>
+          <li>導流：想要模板？點簡介連結下載。</li>
+          <li>互動：你會選 A 還是 B？留言告訴我。</li>
+          <li>收藏：這招很實用，先存起來。</li>
+          <li>社群：進 Discord 看大家怎麼改腳本。</li>
+        </ul>
+        <p class="small">每支只用「一個」 CTA，避免訊息衝突。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Script Templates -->
+  <section id="script">
+    <h2>四、拍攝腳本模板（SOV / B-Roll / 分鏡）</h2>
+    <div class="grid3">
+      <div class="block">
+        <h3>口播（SOV）模板</h3>
+        <ul class="list">
+          <li>0–3s Hook（反差/數據/提問）</li>
+          <li>3–20s 步驟 1/2/3（每步 5–7 秒）</li>
+          <li>20–27s 成果畫面（前/後對比）</li>
+          <li>27–30s CTA（單一行動）</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>B-Roll 清單</h3>
+        <ul class="list">
+          <li>器材特寫、手部操作、畫面跳切</li>
+          <li>螢幕錄影（快捷鍵顯示）</li>
+          <li>表情反應鏡頭、點頭、指點</li>
+          <li>城市/通勤情境做轉場</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>字幕 & 標題</h3>
+        <ul class="list">
+          <li>每行 10–12 字、關鍵詞加粗</li>
+          <li>標題含搜尋詞（例：Reels 封面 教學）</li>
+          <li>封面：大字＋對比色＋ 3–4 字訴求</li>
+        </ul>
+      </div>
+    </div>
+    <div class="block">
+      <h3>檔名 & 版本控管（搭配「創作者資料庫」）</h3>
+      <div class="code">YYYYMMDD_平台_支柱_題目v01  
+YYYYMMDD_平台_支柱_題目v02-A(新Hook)</div>
+    </div>
+  </section>
+
+  <!-- 5 14-day calendar -->
+  <section id="calendar">
+    <h2>五、14 天日曆與每日任務</h2>
+    <div class="grid2">
+      <div class="block">
+        <h3>日曆（建議時段：中午 12:00 / 晚上 20:00）</h3>
+        <ul class="list">
+          <li><b>Day 1–2：</b>受眾/支柱確認＋題庫 20 題</li>
+          <li><b>Day 3–4：</b>一鍵生成腳本 8 支（支柱各 2）</li>
+          <li><b>Day 5–6：</b>錄影＋剪輯（固定模板）</li>
+          <li><b>Day 7：</b>上片 2 支＋記錄數據</li>
+          <li><b>Day 8–9：</b>再產 8 支腳本（優化 Hook）</li>
+          <li><b>Day 10–11：</b>錄影＋剪輯（批量）</li>
+          <li><b>Day 12–13：</b>上片 4 支＋A/B 測試</li>
+          <li><b>Day 14：</b>匯總、留存、下一輪題目</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>每日任務（15–30 分鐘）</h3>
+        <ul class="list">
+          <li>10 分鐘選題＋腳本微調</li>
+          <li>10 分鐘回覆留言、蒐集痛點</li>
+          <li>5 分鐘數據記錄：播放 / 完播 / 互動</li>
+          <li>每晚安排明日素材（服裝、場景）</li>
+        </ul>
+        <div class="note">批量法：週末半天拍 6–8 條，平日只剪＋上片。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 KPI & AB -->
+  <section id="kpi">
+    <h2>六、KPI 標竿（台灣）與 A/B 實驗清單</h2>
+    <div class="grid2">
+      <div class="block">
+        <h3>初期 KPI（參考區間）</h3>
+        <ul class="list">
+          <li>完播率：≥ 35%（30 秒片）</li>
+          <li>3 秒留存：≥ 70%</li>
+          <li>互動率：≥ 3%（按讚+留言+收藏 / 觀看）</li>
+          <li>停留提升：首句 Hook < 3 秒進入價值</li>
+        </ul>
+        <p class="small">若低於標準，優先測試 Hook 與前 5 秒字幕。</p>
+      </div>
+      <div class="block">
+        <h3>A/B 實驗清單（連做 4 輪）</h3>
+        <ul class="list">
+          <li>Hook：反差 vs 數據 vs 提問</li>
+          <li>字幕：三行大字 vs 單行跑馬</li>
+          <li>封面：白底黑字 vs 品牌色</li>
+          <li>CTA：留言關鍵字 vs 連結導流</li>
+          <li>上片時段：12:00 vs 20:00</li>
+        </ul>
+        <p class="small">每輪只改「一件事」，用資料庫版本註記。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 SEO GEO -->
+  <section id="seo">
+    <h2>七、SEO / GEO 在地化規範（繁中）</h2>
+    <div class="block">
+      <ul class="list">
+        <li>語言：繁體中文（zh-TW），保留台灣口語（例：先存起來、這招）。</li>
+        <li>地名用語：北部/中部/南部、台北、台中、高雄；金流（綠界）、社群（Line 官方帳號）。</li>
+        <li>標題含關鍵詞：平台＋動詞＋目標（例：Reels 封面 設計 教學）。</li>
+        <li>描述區前 80 字放主關鍵詞＋CTA；Hashtag 3–7 個（品牌 1、通用 2–3、細分 1–3）。</li>
+        <li>Schema（文章/FAQ）可加在部落格版本；外鏈導至 Discord 與產品首頁。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8 Prompts -->
+  <section id="prompts">
+    <h2>八、可複製的 AI 提示詞（直接貼上即可）</h2>
+    <div class="grid2">
+      <div class="block">
+        <h3>一鍵生成腳本（30 秒版）</h3>
+        <div class="code">系統：你是短影音腳本教練，輸出繁中（台灣），字數精煉。  
+使用者：平台＝IG Reels；支柱＝教育；題目＝「租屋房間也能拍出清晰人像」；長度＝30 秒。  
+請輸出：1) Hook 3 種 2) 口播逐句 3) 分鏡（SOV/B-roll/字幕）4) 單一 CTA（留言關鍵字）。</div>
+      </div>
+      <div class="block">
+        <h3>IP 人設與 14 天規劃</h3>
+        <div class="code">系統：你是內容策略顧問，輸出繁中（台灣）。  
+使用者：ICP＝上班族創作者；目標＝兩週上片 8 支。  
+請產出：1) IP Profile（語氣/禁忌/口頭禪） 2) 內容支柱配比  
+3) 14 天日曆（每日任務） 4) 題目清單 20 個（依矩陣分配）。</div>
+      </div>
+    </div>
+    <div class="block">
+      <h3>封面/標題/Hashtag 產生器</h3>
+      <div class="code">請依題目「三步做出 IG 封面」，輸出：  
+1) 標題 10 組（含關鍵詞） 2) 封面文案 5 組（≤4 字）  
+3) Hashtag：品牌 1、通用 3、細分 3（繁中/台灣）。</div>
+    </div>
+  </section>
+
+  <hr class="sep" />
+
+  <div class="cta">
+    <a class="btn gold" href="/login">立即登入，生成我的 14 天計畫</a>
+    <a class="btn ghost" href="/forum">加入 Discord，和大家一起執行</a>
+  </div>
 </main>
 
 <footer>© 2025 ReelMind · AI 短影音 · 台灣</footer>
